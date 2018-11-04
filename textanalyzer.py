@@ -31,6 +31,14 @@ HA = ('mathe', 'deutsch', 'latein', 'englisch', 'geo', 'geographie', 'erdkunde',
 HAantwort = ('Buch S. ')
 Hausaufgaben = HAantwort + str(random.randint(10,200)) + '/' + str(random.randint(1,13))
 
+NewsTickerWitz = ('witz', 'witze', 'joke', 'jokes')
+ntwitzlist = []
+with open('newsticker.txt', 'r', encoding='utf-8') as ntwitz:
+    for line in ntwitz.readlines():
+        line = line.rstrip()  # remove trailing '\n'
+        if line:
+            ntwitzlist.append(line)
+
 		 
 def analyze_text(text):
     satz = text.lower()
@@ -57,6 +65,8 @@ def analyze_text(text):
             resp = Nein[random.randint(0, len(Nein) - 1)]
         elif wort in Warum:
             resp = Weil[random.randint(0, len(Weil) - 1)]
+        elif wort in NewsTickerWitz:
+            resp = ntwitzlist[random.randint(0, len(ntwitzlist) -1)]
         elif wort in Verneinung:
             resp = 'doch'
     # ...then check if whole sentence matches

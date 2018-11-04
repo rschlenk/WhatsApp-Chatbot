@@ -7,7 +7,8 @@
  2. [Voraussetzungen](#2-voraussetzungen)
  3. [Start](#3-start)
  4. [Exit](#4-exit)
-
+ 5. [Credits](#5-credits)
+ 
 ***
 
 ## 1. Kurzbeschreibung
@@ -36,4 +37,8 @@ Abhängig vom Betriebssystem und der Python-Installation, z.B.
 
 Mit Schließen des Selenium WhatsApp Web Fensters wird `wachatbot.py` beendet.<br />
 Mit ENTER wird `simplebot.py` beendet.
+
+## 5. Credits
+
+Die Witze in `newsticker.txt` stammen aus dem Newsticker von: http://www.der-postillon.com 
 
