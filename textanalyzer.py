@@ -93,3 +93,29 @@ def analyze_text(text):
 
     return (resp_title, resp_msg)
 
+
+# Text analysis with TextBlob (example code)
+# Install with:
+#    pip install -U textblob-de
+#    python -m textblob.download_corpora
+#  
+#from textblob_de import TextBlobDE as TextBlob
+#blob = TextBlob(text)
+#for blob_word, blob_part_of_speech in blob.pos_tags:
+#if blob_part_of_speech == 'NN' or blob_part_of_speech == 'NNP':
+#    resp = 'Ich habe folgendes Nomen entdeckt: ' + blob_word
+
+
+# Get newsfeed via newsapi.org (example code)
+# API key: 187ad11a47d44d41ae96e412610e1931
+#
+#import requests
+#url = "https://newsapi.org/v2/top-headlines?sources=der-tagesspiegel&apiKey=187ad11a47d44d41ae96e412610e1931"
+#if True:  # if Internet connection available
+#    response = requests.get(url)
+#    json_data = response.json()
+#    newsnumber = random.randint(0, json_data['totalResults']-1)
+#    resp = json_data['articles'][newsnumber]['title']
+#    resp_msg = '_' + json_data['articles'][newsnumber]['description'] + '_'
+#else:
+#    resp = 'No Internet -> No News!'
