@@ -8,6 +8,7 @@ Chatbot text analysis component
 
 import random
 import re
+import wikipedia
 
 
 sm = u'\U0001F642'  # Smiley
@@ -72,6 +73,18 @@ def analyze_text(text):
     # ...then check if whole sentence matches
     if satz in ('was get', 'was geht', 'wat geht'):
         resp = Jokes[random.randint(0, len(Jokes) - 1)]
+    elif (satz.split(' '))[0] in 'wiki':
+        wikipedia.set_lang('de')
+        if True:  # if Internet connection available
+            try:
+                resp_msg = '_' + wikipedia.summary((satz.split(' '))[1], sentences=2) + '_'
+            except wikipedia.exceptions.DisambiguationError as e:
+                resp_msg = "FAIL! Wort war nicht eindeutig!"
+            except wikipedia.exceptions.PageError as e:
+                resp_msg = "MEGAFAIL! Wort gibt es nicht in Wikipedia!"
+        else:
+            resp_msg = '_' + (satz.split(' '))[1] + '_'
+        resp = ((satz.split(' '))[1]).capitalize()
     elif satz in ('jmd on'):
         resp = Begruessung[random.randint(0, len(Begruessung) - 1)]
 

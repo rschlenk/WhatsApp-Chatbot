@@ -24,6 +24,8 @@ Autoren: Timon, Yunis, Ralph (Herbstferien 2018)
      * https://github.com/mozilla/geckodriver/releases
  * Selenium für Python (https://www.seleniumhq.org/)
      * `pip install selenium`
+ * Wikipedia API für Python (https://github.com/goldsmith/Wikipedia)
+     * `pip install wikipedia`
  * sowie: Internet und Smartphone zum Betrieb von WhatApp Web 
 
 ## 3. Start
